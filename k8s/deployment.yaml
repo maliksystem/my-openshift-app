@@ -13,6 +13,8 @@ spec:
       labels:
         app: my-openshift-app
     spec:
+      imagePullSecrets:
+      - name: acr-secret
       containers:
       - name: my-openshift-app
         image: openshiftacr.azurecr.io/my-openshift-app:latest
