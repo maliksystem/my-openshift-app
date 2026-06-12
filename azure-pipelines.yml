@@ -42,6 +42,9 @@ stages:
       vmImage: 'ubuntu-latest'
     steps:
 
+    - checkout: self
+      fetchDepth: 1
+
     - task: KubernetesManifest@0
       displayName: 'Deploy to ARO Cluster'
       inputs:
