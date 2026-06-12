@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-openshift-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-openshift-app
+  template:
+    metadata:
+      labels:
+        app: my-openshift-app
+    spec:
+      containers:
+      - name: my-openshift-app
+        image: openshiftacr.azurecr.io/my-openshift-app:latest
+        ports:
+        - containerPort: 80
